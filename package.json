@@ -1,0 +1,18 @@
+{
+  "name": "@continual-learning/prototype",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test dist/tests/*.test.js tests/*.test.mjs",
+    "demo": "npm run build && node dist/examples/demo.js",
+    "test:opencode": "npm run build && node dist/examples/opencode-smoke.js",
+    "review:opencode": "node dist/packages/cli/opencode-review.js",
+    "approve": "node dist/packages/cli/approve.js"
+  },
+  "dependencies": { "ajv": "^8.17.1" },
+  "devDependencies": { "@types/node": "^22.0.0", "typescript": "~5.9.3" }
+}
